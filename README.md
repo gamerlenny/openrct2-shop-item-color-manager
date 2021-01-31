@@ -19,7 +19,7 @@ SOURCE FILE: ShopItemColorManager.src.js is the editable source file with the fu
 DIST FILE: ShopItemColorManager.js is the minified, lighter version of the script, to be used in the plugin folder.
 
 ## Installation
-1. Install a compatible version of OpenRCT2. This plugin has been tested on OpenRCT2 0.3.2, compatibility with older version is not guaranteed in any way.
+1. Install a compatible version of OpenRCT2. This plugin has been tested on OpenRCT2 0.3.2-2d6da75 develop, compatibility with older version is not guaranteed in any way.
 2. Download the plugin file ShopItemColorManager.js
 3. Put that file in your OpenRCT2 'plugin' folder (usually in C:\Users\username\Documents\OpenRCT2\plugin on Windows 10)
 
