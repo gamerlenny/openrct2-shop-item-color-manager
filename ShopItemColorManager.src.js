@@ -22,7 +22,7 @@ Determines which of the items ID is the one that is used for the main color sche
 If the secondary item ID is 255, it means the stall sells only one item
 If a stall sells 2 items, the one used for coloring is the secondary item
 **/
-function getColoredItemId(item1Id, item2Id) {	
+function getColoredItemId(item1Id, item2Id) {
 	var id = item1Id;
 	//If the stall sells 2 items we check if the secondary item is a hat, tshirt, balloon or umbrella
 	if(item2Id == 0 || item2Id == 4 || item2Id == 18 || item2Id == 20) {
@@ -38,16 +38,13 @@ and whether the randomize setting is activated or not for that item
 */
 function getNewColorSettings(rideId, item1Id, item2Id) {
 	var color = DEFAULT_COLOR;
-	var id = getColoredItemId(item1Id, item2Id);	
+	var id = getColoredItemId(item1Id, item2Id);
 	if(id === 18) {
 		//hat
 		if(HAT_RANDOM) {
 			COLORS[0] = getRandomColor();
 		}
 		color = COLORS[0];
-		if(typeof window != 'undefined') {
-			window.findWidget("hat_picker").colour = COLORS[0];
-		}	
 	}
 	else if(id === 20) {
 		//tshirt
@@ -55,9 +52,6 @@ function getNewColorSettings(rideId, item1Id, item2Id) {
 			COLORS[1] = getRandomColor();
 		}
 		color = COLORS[1];
-		if(typeof window != 'undefined') {
-			window.findWidget("ts_picker").colour = COLORS[1];
-		}
 	}
 	else if(id === 4) {
 		//umbrella
@@ -65,9 +59,6 @@ function getNewColorSettings(rideId, item1Id, item2Id) {
 			COLORS[2] = getRandomColor();
 		}
 		color = COLORS[2];
-		if(typeof window != 'undefined') {
-			window.findWidget("umb_picker").colour = COLORS[2];
-		}
 	}
 	else if(id === 0) {
 		//balloon
@@ -75,9 +66,6 @@ function getNewColorSettings(rideId, item1Id, item2Id) {
 			COLORS[3] = getRandomColor();
 		}
 		color = COLORS[3];
-		if(typeof window != 'undefined') {
-			window.findWidget("bal_picker").colour = COLORS[3];
-		}
 	}
 	
 	return {
@@ -89,13 +77,21 @@ function getNewColorSettings(rideId, item1Id, item2Id) {
 }
 
 /**
-Sets new random colors for all items
+Redraws the main window after a setting has been changed
 */
-function initColors() {
-	COLORS[0] = getRandomColor();
-	COLORS[1] = getRandomColor();
-	COLORS[2] = getRandomColor();
-	COLORS[3] = getRandomColor();
+function updateWindow() {
+	
+	if(typeof window != 'undefined' && window.title != '') {
+		window.findWidget("hat_picker").colour = COLORS[0];
+		window.findWidget("ts_picker").colour = COLORS[1];
+		window.findWidget("umb_picker").colour = COLORS[2];
+		window.findWidget("bal_picker").colour = COLORS[3];
+		
+		window.findWidget("hat_random").isChecked = HAT_RANDOM;
+		window.findWidget("ts_random").isChecked = TSHIRT_RANDOM;
+		window.findWidget("umb_random").isChecked = UMBRELLA_RANDOM;
+		window.findWidget("bal_random").isChecked = BALLOON_RANDOM;
+	}
 }
 
 /**
@@ -323,6 +319,7 @@ function initialize() {
 				//change the color by calling 'ridesetappearance'
 				var ar = getNewColorSettings(rideId, itemId, itemId2);
 				context.executeAction('ridesetappearance', ar, function(r){});
+				updateWindow();
 			}
 		}
 	});
@@ -340,16 +337,7 @@ function destroy() {
 	var COLORS = [28,28,28,7];
 	setRandomization(false);
 	if(typeof window != 'undefined') {
-		window.findWidget("hat_picker").colour = COLORS[0];
-		window.findWidget("ts_picker").colour = COLORS[1];
-		window.findWidget("umb_picker").colour = COLORS[2];
-		window.findWidget("bal_picker").colour = COLORS[3];
-		
-		window.findWidget("hat_random").isChecked = HAT_RANDOM;
-		window.findWidget("ts_random").isChecked = TSHIRT_RANDOM;
-		window.findWidget("umb_random").isChecked = UMBRELLA_RANDOM;
-		window.findWidget("bal_random").isChecked = BALLOON_RANDOM;
-		
+		updateWindow();
 		window.close();
 	}
 }
