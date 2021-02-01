@@ -24,8 +24,10 @@ DIST FILE: ShopItemColorManager.js is the minified, lighter version of the scrip
 3. Put that file in your OpenRCT2 'plugin' folder (usually in C:\Users\username\Documents\OpenRCT2\plugin on Windows 10)
 
 ## Usage
+![(ShopItemColorManager window image)](ShopItemColorManager.jpg)
+<br>
 By default, the plugin is enabled and every time you place a Information Kiosk, Hat Stall, T-Shirt Stall, Balloon Stall or Souvenir Stall, the shop item's preset color will be changed to a random color.
-<br><br>
+<br>
 If you open the ShopItemColorManager window from the map menu, you can change and fine-tune the settings:<br>
 - If you uncheck "Manage item colors for all new stalls", the plugin will be disabled and will not manage shop item colors anymore, and default / vanilla item colors will be used for every new stall: red for umbrellas, t-shirts, hats and blue for balloons<br>
 - If you want a color not to be random for a specific item type (Hats, T-Shirts, Umbrellas or Balloons), but instead want all the stalls that sell that item to use the same color everywhere, uncheck the corresponding "Random color for every stall" checkbox.<br>
