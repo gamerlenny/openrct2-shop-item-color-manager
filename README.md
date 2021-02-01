@@ -1,4 +1,4 @@
-# openrct2-shop-item-color-manager
+# Shop Item Color Manager - a plugin for OpenRCT2
 Shop Item Color Manager is a plugin for OpenRCT2 that manages preset colors for items sold by stalls (umbrellas, t-shirts, hats and balloons). It allows to automatically change the preset item color to a custom, user-chosen one, or to a random color that changes everytime a new stall is built.
 
 ## Description
