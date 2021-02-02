@@ -15,7 +15,7 @@ Shop Item Color Manager allows you to:
 
 ## Contents
 This plugin was coded in pure Javascript using Notepad++, with no special software, libraries or other dependencies.<br>
-SOURCE FILE: ShopItemColorManager.src.js is the editable source file with the full JS source code for the plugin.<br>
+SOURCE FILE: /src/ShopItemColorManager.src.js is the editable source file with the full JS source code for the plugin.<br>
 DIST FILE: ShopItemColorManager.js is the minified, lighter version of the script, to be used in the plugin folder.
 
 ## Installation
