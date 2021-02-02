@@ -24,7 +24,7 @@ DIST FILE: ShopItemColorManager.js is the minified, lighter version of the scrip
 3. Put that file in your OpenRCT2 'plugin' folder (usually in C:\Users\username\Documents\OpenRCT2\plugin on Windows 10)
 
 ## Usage
-![(ShopItemColorManager window image)](ShopItemColorManager.jpg)
+![(ShopItemColorManager window image)](/img/ShopItemColorManager.jpg)
 <br>
 By default, the plugin is enabled and every time you place a Information Kiosk, Hat Stall, T-Shirt Stall, Balloon Stall or Souvenir Stall, the shop item's preset color will be changed to a random color.
 <br>
